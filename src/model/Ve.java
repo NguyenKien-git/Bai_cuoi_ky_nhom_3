@@ -35,6 +35,4 @@ public class Ve implements Ma_ve, Kiem_tra_ghe, Kiem_tra_chuyen_xe, Gia_ve{
     public thanh_Toan Thanh_toan() {
         return Thanh_toan;
     }
-
-    
 }
