@@ -16,23 +16,23 @@ public class Ve implements Ma_ve, Kiem_tra_ghe, Kiem_tra_chuyen_xe, Gia_ve{
         this.thanh_Toan = thanh_Toan;
     }
 
-    public String getMave() {
+    public String getMave(){
         return ma_Ve;
     }
 
-    public Khach_Hang getKhachHang() {
+    public Khach_Hang getKhachHang(){
         return khach_Hang;
     }
 
-    public Chuyen_Xe getChuyenXe() {
+    public Chuyen_Xe getChuyenXe(){
         return chuyen_Xe;
     }
 
-    public Ghe getGhe() {
+    public Ghe getGhe(){
         return ghe;
     }
 
-    public thanh_Toan Thanh_toan() {
+    public thanh_Toan Thanh_toan(){
         return Thanh_toan;
     }
 }
