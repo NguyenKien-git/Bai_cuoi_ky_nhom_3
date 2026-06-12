@@ -1,46 +1,113 @@
 package main;
 
 import model.*;
-import service.QuanLyKhachHang;
+import service.BookingService;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        BookingService bookingService = new BookingService();
+        Scanner sc = new Scanner(System.in);
 
-        QuanLyKhachHang ql = new QuanLyKhachHang();
+        while (true) {
+            System.out.println("\n=== HE THONG DAT VE XE KHACH HA NOI - HAI PHONG ===");
+            System.out.println("1. Khach hang dat ve");
+            System.out.println("2. Nhan vien xem ve da ban");
+            System.out.println("3. Thoat");
+            System.out.print("Chon: ");
+            int choice = Integer.parseInt(sc.nextLine());
 
-        KhachHang kh1 = new KhachThuong(
-                "KH01",
-                "Nguyen Van A",
-                "0123456789",
-                "a@gmail.com");
+            if (choice == 1) {
+                handleCustomerBooking(bookingService, sc);
+            } else if (choice == 2) {
+                handleStaffView(bookingService);
+            } else if (choice == 3) {
+                System.out.println("Cam on ban da su dung he thong!");
+                break;
+            }
+        }
+        sc.close();
+    }
 
-        KhachHang kh2 = new KhachThanhVien(
-                "KH02",
-                "Tran Thi B",
-                "0987654321",
-                "b@gmail.com");
+    private static void handleCustomerBooking(BookingService service, Scanner sc) {
+        System.out.println("\n--- DAT VE ---");
+        System.out.print("Nhap ho ten: ");
+        String ten = sc.nextLine();
+        System.out.print("Nhap so dien thoai: ");
+        String sdt = sc.nextLine();
+        System.out.print("Nhap email: ");
+        String email = sc.nextLine();
+        System.out.print("Loai khach (NORMAL/MEMBER/VIP): ");
+        String loai = sc.nextLine().toUpperCase();
 
-        KhachHang kh3 = new KhachVIP(
-                "KH03",
-                "Le Van C",
-                "0111222333",
-                "c@gmail.com");
+        Customer customer = new Customer("KH" + System.currentTimeMillis(), ten, sdt, email, loai);
 
-        ql.themKhachHang(kh1);
-        ql.themKhachHang(kh2);
-        ql.themKhachHang(kh3);
+        System.out.println("\nDanh sach chuyen xe:");
+        List<BusTrip> trips = service.getAllTrips();
+        for (BusTrip t : trips) {
+            System.out.println(t.getMaChuyen() + " | " + t.getDiemDi() + " -> " + t.getDiemDen() + " | " + t.getThoiGianKhoiHanh() + " | Gia: " + t.getGiaCoBan());
+        }
 
-        ql.hienThiDanhSach();
+        System.out.print("\nNhap ma chuyen xe: ");
+        String maChuyen = sc.nextLine();
+        BusTrip selectedTrip = service.getTripById(maChuyen);
+        if (selectedTrip == null) {
+            System.out.println("Khong tim thay chuyen xe!");
+            return;
+        }
 
-        double giaVe = 200000;
+        System.out.println("\nGhe trong cua chuyen " + maChuyen + ":");
+        List<Seat> available = selectedTrip.getGheTrong();
+        for (Seat s : available) {
+            System.out.println(s.getSoGhe() + " (" + s.getLoaiGhe() + ") - Phu phi: " + s.getPhuPhi());
+        }
 
-        System.out.println("Gia KH thuong: "
-                + kh1.tinhGiaVe(giaVe));
+        System.out.print("\nNhap so ghe muon dat: ");
+        String soGhe = sc.nextLine();
+        Seat chosenSeat = selectedTrip.getGheBySoGhe(soGhe);
+        if (chosenSeat == null || !chosenSeat.getTrangThai().equals("AVAILABLE")) {
+            System.out.println("Ghe khong hop le hoac da dat!");
+            return;
+        }
 
-        System.out.println("Gia KH thanh vien: "
-                + kh2.tinhGiaVe(giaVe));
+        double finalPrice = service.calculateFinalPrice(selectedTrip, chosenSeat, customer);
+        System.out.println("Gia ve cuoi cung: " + finalPrice + " VND (da tinh phu phi + giam gia)");
 
-        System.out.println("Gia KH VIP: "
-                + kh3.tinhGiaVe(giaVe));
+        System.out.println("\nChon phuong thuc thanh toan:");
+        System.out.println("1. Tien mat");
+        System.out.println("2. Chuyen khoan");
+        System.out.println("3. Vi dien tu");
+        System.out.print("Chon: ");
+        int pm = Integer.parseInt(sc.nextLine());
+        PaymentMethod paymentMethod;
+        if (pm == 1) paymentMethod = new CashPayment();
+        else if (pm == 2) paymentMethod = new BankTransferPayment();
+        else paymentMethod = new EWalletPayment();
+
+        try {
+            Ticket ticket = service.bookTicket(customer, maChuyen, soGhe, paymentMethod);
+            System.out.println("\n=== DAT VE THANH CONG ===");
+            System.out.println("Ma ve: " + ticket.getMaVe());
+            System.out.println("Chuyen: " + ticket.getChuyenXe().getMaChuyen());
+            System.out.println("Ghe: " + ticket.getGhe().getSoGhe() + " (" + ticket.getGhe().getLoaiGhe() + ")");
+            System.out.println("Gia: " + ticket.getGiaVeCuoiCung());
+            System.out.println("Thanh toan: " + ticket.getPhuongThucThanhToan());
+            System.out.println("Trang thai: " + ticket.getTrangThaiThanhToan());
+        } catch (Exception e) {
+            System.out.println("Loi dat ve: " + e.getMessage());
+        }
+    }
+
+    private static void handleStaffView(BookingService service) {
+        System.out.println("\n--- VE DA BAN ---");
+        List<String> lines = service.getSoldTicketsToday();
+        if (lines.isEmpty()) {
+            System.out.println("Chua co ve nao duoc ban.");
+        } else {
+            for (String line : lines) {
+                System.out.println(line);
+            }
+        }
     }
 }
