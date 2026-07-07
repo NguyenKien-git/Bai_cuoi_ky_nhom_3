@@ -2,6 +2,7 @@ package api;
 
 import service.InOutput;
 import service.ServiceTicker;
+import Test.Test;
 
 public class MainApplication {
 
@@ -28,7 +29,7 @@ public class MainApplication {
 
             if (choice == 1) {
                 // Chay test - vo hieu hoa cac chuong trinh con lai
-                InOutput.test();
+                Test.runTests();
             }
             System.out.println("Ket thuc chuong trinh!");
             return;
