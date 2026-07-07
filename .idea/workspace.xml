@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b59f845-7abb-4d1f-b12b-7c37de41edaa" name="Changes" comment="Tao file">
-      <change afterPath="$PROJECT_DIR$/src/interfaces/Thanh_toan/Phuong_thuc_thanh_toan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interfaces/Thanh_toan/Tien_mat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Dat_ve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/PaymentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/interfaces/test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Thanh_toan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Thanh_toan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Ve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Ve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/test" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +35,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/NguyenKien-git/Bai_cuoi_ky_nhom_3.git&quot;,
-    &quot;accountId&quot;: &quot;c2f3ddda-c7e8-4877-b246-ff390b77cdac&quot;
+    &quot;accountId&quot;: &quot;1308aff9-26e4-4898-ac01-1a529fae3af9&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -56,29 +47,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Kien&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Kien/IdeaProjects/Bai_cuoi_ky_nhom_3/src/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Itel/Bai_cuoi_ky_nhom_3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Kien/IdeaProjects/Bai_cuoi_ky_nhom_3/src/src/Main.java"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
       </set>
     </attachedChunks>
   </component>

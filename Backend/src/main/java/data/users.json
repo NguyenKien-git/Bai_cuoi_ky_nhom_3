@@ -1,0 +1,23 @@
+[
+  {
+    "khuyenMai": 5,
+    "idUser": "U1",
+    "nameUser": "Nguyen Van A",
+    "phoneUser": 123456,
+    "typeUser": 1
+  },
+  {
+    "khuyenMai": 10,
+    "idUser": "U2",
+    "nameUser": "Tran Thi B",
+    "phoneUser": 654321,
+    "typeUser": 2
+  },
+  {
+    "khuyenMai": 15,
+    "idUser": "U3",
+    "nameUser": "Le Van C",
+    "phoneUser": 111111,
+    "typeUser": 3
+  }
+]

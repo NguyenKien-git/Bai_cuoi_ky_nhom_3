@@ -1,0 +1,28 @@
+[
+  {
+    "idTicker": "T1",
+    "customer": {
+      "khuyenMai": 5,
+      "idUser": "U1",
+      "nameUser": "Nguyen Van A",
+      "phoneUser": 123456,
+      "typeUser": 1
+    },
+    "trip": {
+      "idTrip": "Trip1",
+      "fromTrip": "Ha Noi",
+      "toTrip": "Ho Chi Minh",
+      "mm": 30,
+      "hh": 14,
+      "bienSo": "ABC-123",
+      "totalSeat": 40
+    },
+    "seat": {
+      "idSeat": "S1",
+      "slotSeat": 1,
+      "typeSeat": false,
+      "statusSeat": true
+    },
+    "payment": true
+  }
+]

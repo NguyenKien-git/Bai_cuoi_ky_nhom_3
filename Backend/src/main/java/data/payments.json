@@ -1,0 +1,17 @@
+[
+  {
+    "typePayment": 1,
+    "soTien": 25000
+  },
+  {
+    "typePayment": 2,
+    "idTK": "TK123456",
+    "soTien": 25000
+  },
+  {
+    "typePayment": 3,
+    "idVi": "VI001",
+    "maPIN": "1234",
+    "soTien": 25000
+  }
+]
