@@ -1,0 +1,20 @@
+[
+  {
+    "idTrip": "Trip1",
+    "fromTrip": "Ha Noi",
+    "toTrip": "Ho Chi Minh",
+    "mm": 30,
+    "hh": 14,
+    "bienSo": "ABC-123",
+    "totalSeat": 40
+  },
+  {
+    "idTrip": "Trip2",
+    "fromTrip": "Da Nang",
+    "toTrip": "Can Tho",
+    "mm": 0,
+    "hh": 8,
+    "bienSo": "XYZ-456",
+    "totalSeat": 35
+  }
+]

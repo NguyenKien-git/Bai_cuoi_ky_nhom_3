@@ -1,0 +1,20 @@
+[
+  {
+    "idSeat": "S1",
+    "slotSeat": 1,
+    "typeSeat": false,
+    "statusSeat": true
+  },
+  {
+    "idSeat": "S2",
+    "slotSeat": 2,
+    "typeSeat": true,
+    "statusSeat": false
+  },
+  {
+    "idSeat": "S3",
+    "slotSeat": 3,
+    "typeSeat": false,
+    "statusSeat": false
+  }
+]
